@@ -9,10 +9,14 @@ const RegisterdUser = () => {
   const [rowData, setRowData] = useState([])
 
     const columnDefs = [
-      {field:'id', sortable: true, filter: true},
-      {field:'name', sortable: true, filter: true},
-      {field:'email', sortable: true, filter: true},
-      {field:'password', sortable: true, filter: true}
+      {field:'Id', sortable: true, filter: true},
+      {field:'Full-name', sortable: true, filter: true},
+      {field:'Email', sortable: true, filter: true},
+      {field:'Passsword', sortable: true, filter: true},
+      {field:'Confirm-password', sortable: true, filter: true},
+      {field:'Country', sortable: true, filter: true},
+      {field:'Address', sortable: true, filter: true},
+      {field:'Gender', sortable: true, filter: true}
     ]
     
      

@@ -1,31 +1,68 @@
 {
-    "users": [
-        {
-            "id" : 1,
-            "name": "Hetakshi Patel",
-            "email" : "hetakshi@gmail.com",
-            "password": "12345678"
-        },
-        {
-            "id" : 2,
-            "name": "Nilesh Bandhiya",
-            "email" : "nilesh@gmail.com",
-            "password": "87654321"
-        },
-        {
-            "id" : 3,
-            "name": "Krinal Sonara",
-            "email" : "krinal@gmail.com",
-            "password": "11223344"
-        },
-        {
-            "id" : 4,
-            "name": "Shyam Kasundara",
-            "email" : "shyam@gmail.com",
-            "password": "44332211"
-        }
-    ],
-    "blogs": [
-        
-    ]
+  "users": [
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "password": "12345",
+      "cpassword": "12345",
+      "country": "canada",
+      "address": "xyzw",
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "name": "Hetakshi",
+      "email": "hetaxi@gmail.com",
+      "password": "4121",
+      "cpassword": "4121",
+      "country": "usa",
+      "address": "xyzw",
+      "gender": "Female",
+      "id": 2
+    },
+    {
+      "name": "Nilesh ",
+      "email": "nilesh@gmail.com",
+      "password": "123",
+      "cpassword": "123",
+      "country": "canada",
+      "address": "xyzw",
+      "gender": "Male",
+      "id": 3
+    }
+  ],
+  "blogs": [
+    {
+      "id":1,
+      "title": "Javascript",
+      "Description": "JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard.[10] It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.JavaScript engines were originally used only in web browsers, but are now core components of some servers and a variety of applications. The most popular runtime system for this usage is Node.js. Although Java and JavaScript are similar in name, syntax, and respective standard libraries, the two languages are distinct and differ greatly in design.",
+      "author": "Nishant Singh ",
+      "imgUrl":
+        "https://media.geeksforgeeks.org/img-practice/banner/diving-into-excel-thumbnail.png"
+    },
+    {
+      "id":2,
+      "title": "Data Structure ",
+      "Description": "In computer science, a data structure is a data organization, management, and storage format that is usually chosen for efficient access to data. More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data, i.e., it is an algebraic structure about data. Data structures provide a means to manage large amounts of data efficiently for uses such as large databases and internet indexing services. Usually, efficient data structures are key to designing efficient algorithms. Some formal design methods and programming languages emphasize data structures, rather than algorithms, as the key organizing factor in software design. Data structures can be used to organize the storage and retrieval of information stored in both main memory and secondary memory.",
+      "author": "Suresh Kr",
+      "imgUrl":
+        "https://media.geeksforgeeks.org/img-practice/banner/coa-gate-2022-thumbnail.png"
+    },
+    {
+      "id":3,
+      "title": "Algorithm",
+      "Description": "Algorithms can be expressed in many kinds of notation, including natural languages, pseudocode, flowcharts, drakon-charts, programming languages or control tables (processed by interpreters). Natural language expressions of algorithms tend to be verbose and ambiguous, and are rarely used for complex or technical algorithms. Pseudocode, flowcharts, drakon-charts and control tables are structured ways to express algorithms that avoid many of the ambiguities common in the statements based on natural language. Programming languages are primarily intended for expressing algorithms in a form that can be executed by a computer, but are also often used as a way to define or document algorithms.There is a wide variety of representations possible and one can express a given Turing machine program as a sequence of machine tables (see finite-state machine, state transition table and control table for more), as flowcharts and drakon-charts (see state diagram for more), or as a form of rudimentary machine code or assembly code called sets of quadruples (see Turing machine for more).",
+      "author": "Monu Kr",
+      "imgUrl":
+        "https://media.geeksforgeeks.org/img-practice/banner/google-test-series-thumbnail.png"
+    },
+    {
+      "id": 4,
+      "title": "Computer Network",
+      "Description": "A computer network is a set of computers sharing resources located on or provided by network nodes. The computers use common communication protocols over digital interconnections to communicate with each other. These interconnections are made up of telecommunication network technologies, based on physically wired, optical, and wireless radio-frequency methods that may be arranged in a variety of network topologies.The nodes of a computer network can include personal computers, servers, networking hardware, or other specialized or general-purpose hosts. They are identified by network addresses, and may have hostnames. Hostnames serve as memorable labels for the nodes, rarely changed after initial assignment. Network addresses serve for locating and identifying the nodes by communication protocols such as the Internet Protocol.", 
+      "author": "Sonu Kr",
+      "imgUrl":
+        "https://media.geeksforgeeks.org/img-practice/banner/cp-maths-java-thumbnail.png"
+    }
+  ]
 }
