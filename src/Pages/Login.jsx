@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import Header from '../Components/Header'
 import './Register.css'
 
 const Login = () => {
@@ -9,8 +10,7 @@ const Login = () => {
 
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
-  // const [role,setRole] = useState('')
-
+  
   const validate = () => {
     let result = true
 
@@ -22,10 +22,6 @@ const Login = () => {
       result = false;
       toast.warning("Please enter password")
     }
-    // if(role === null || role === ''){
-    //   result = false;
-    //   toast.warning("Please select your role")
-    // }
     return result
   }
 
@@ -40,12 +36,24 @@ const Login = () => {
       }).then((response)=>{
         let Aemail = response.find(ele => ele.email === email) 
         let Apassword = response.find(ele => ele.password === password)
-        // let Arole = response.find(ele => ele.role === role)
-        // console.log(Arole);
 
         if(Aemail && Apassword){
           toast.success("Login Successfully")
-          navigate('/allblogs')
+          if(Aemail.role === 'Admin'){
+            navigate('/registerUser',{
+              state:{
+                name: Aemail.name
+              }
+            })
+          }else{
+            navigate('/userviewblog',{
+              state:{
+                name: Apassword.name
+              }
+            })
+          }
+          setEmail('')
+          setPassword('')
         }else if(Aemail){
           toast.error("Please enter valid password")
         }else{
@@ -57,6 +65,8 @@ const Login = () => {
     }
   }
   return (
+    <>
+    <Header />
     <div className="row">
       <div className="offset-lg-3 col-lg-6" style={{marginTop:'150px'}}>
         <form className="container" onSubmit={loginHandler}>
@@ -75,16 +85,6 @@ const Login = () => {
                 <label htmlFor="name">Password <span className='errmsg'>*</span></label>
                 <input type="password" className='form-control' value={password} onChange={(e => setPassword(e.target.value))}/>
               </div>
-
-             
-                {/* <div className="form-group">
-                  <label htmlFor="role">Role <span className='errmsg'>*</span></label>
-                  <select className='form-control' value={role} onChange={(e => setRole(e.target.value))}>
-                    <option value="selectRole">select your Role</option>
-                    <option value="admin">Admin</option>
-                    <option value="user">User</option>
-                  </select>
-                </div> */}
             </div>
 
             <div className="card-footer">
@@ -96,6 +96,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 

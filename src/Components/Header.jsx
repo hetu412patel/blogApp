@@ -13,7 +13,7 @@ const Header = () => {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
                     <Toolbar>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{cursor:"pointer"}}>
                             BlogApp
                         </Typography>
 
@@ -42,7 +42,7 @@ const Header = () => {
                                 >
                                 AddBlog
                             </NavLink>
-                        </div>
+                        </div>*/}
 
                         <div style={{ margin: '5px 20px'}}>
                             <NavLink 
@@ -51,7 +51,7 @@ const Header = () => {
                                 >
                                 Login
                             </NavLink>
-                        </div> */}
+                        </div> 
 
                     </Toolbar>
                 </AppBar>
