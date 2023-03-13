@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { AgGridReact } from 'ag-grid-react'
+import Box from '@mui/material/Box';
+
 
 import 'ag-grid-community/styles/ag-grid.css'; 
 import "ag-grid-community/styles/ag-theme-alpine.css"; 
 import AdminHeader from '../Components/AdminHeader';
-import AddBlog from '../AdminPanel/AddBlog'
 
 const RegisterdUser = () => {
 
@@ -30,11 +31,15 @@ const RegisterdUser = () => {
 
   return (
     <>
-      <AdminHeader />
-      <AddBlog />
-      <div className='ag-theme-alpine' style={{ height:600}}>
+    
+      <Box sx={{ display: 'flex' }}>
+        <AdminHeader />
+      <Box component="main" sx={{ flexGrow: 1, p: 3, m:10 }}>
+        <div className='ag-theme-alpine' style={{ height:600}}>
           <AgGridReact rowData = {rowData} columnDefs = {columnDefs} />
-      </div>
+        </div>
+      </Box>
+      </Box>
     </>
   )
 }

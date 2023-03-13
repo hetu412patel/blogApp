@@ -1,5 +1,5 @@
 import React from 'react'
-import AllBlogs from '../AdminPanel/AllBlogs'
+import UserBlog from '../Pages/UserBlog'
 import Header from '../Components/Header'
 
 
@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <AllBlogs />
+      <UserBlog />
     </div>
   )
 }

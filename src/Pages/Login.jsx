@@ -40,7 +40,7 @@ const Login = () => {
         if(Aemail && Apassword){
           toast.success("Login Successfully")
           if(Aemail.role === 'Admin'){
-            navigate('/registerUser',{
+            navigate('/adminPage',{
               state:{
                 name: Aemail.name
               }
