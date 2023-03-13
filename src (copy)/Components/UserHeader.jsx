@@ -6,14 +6,12 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import {  useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 
 export default function MenuAppBar() {
  
    const navigate = useNavigate() 
-  const location = useLocation()
-
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
@@ -36,7 +34,7 @@ export default function MenuAppBar() {
             <div>
               
             <IconButton onClick={handleMenu} sx={{ p: 0 }}>
-                <Avatar alt={location.state.name} src="..." />
+                <Avatar alt='A' src="..." />
             </IconButton>
               
               <Menu

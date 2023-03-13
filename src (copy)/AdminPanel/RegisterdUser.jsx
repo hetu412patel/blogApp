@@ -20,7 +20,8 @@ const RegisterdUser = () => {
       {field:'role', sortable: true, filter: true},
       {field:'country', sortable: true, filter: true},
       {field:'address', sortable: true, filter: true},
-      {field:'gender', sortable: true, filter: true}
+      {field:'gender', sortable: true, filter: true},
+      {field:'action', cellRenderer : () => <div><button className='btn btn-secondary' size="sm">change Role</button></div> }
     ]
     
     useEffect(() => {
@@ -35,8 +36,12 @@ const RegisterdUser = () => {
       <Box sx={{ display: 'flex' }}>
         <AdminHeader />
       <Box component="main" sx={{ flexGrow: 1, p: 3, m:10 }}>
-        <div className='ag-theme-alpine' style={{ height:600}}>
-          <AgGridReact rowData = {rowData} columnDefs = {columnDefs} />
+        <div className='ag-theme-alpine' style={{ height:300}}>
+          <AgGridReact 
+            rowData = {rowData} 
+            columnDefs = {columnDefs} 
+            pagination={true}
+            paginationAutoPageSize={true}/>
         </div>
       </Box>
       </Box>

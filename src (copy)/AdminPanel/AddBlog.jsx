@@ -4,56 +4,61 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { toast } from 'react-toastify';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function BasicModal() {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
 
-    const [title,setTitle] = useState('')
-    const [description,setDescription] = useState('')
-    const [author,setAuthor] = useState('')
-    const [category,setCategory] = useState('')
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+    const [author, setAuthor] = useState('')
+    const [category, setCategory] = useState('')
+    
+    const closeModalHandler = () => {
+        setOpen(false)
+    }
 
     const validate = () => {
         let result = true
-    
-        if(title === null || title === ''){
-          result = false;
-          toast.warning("Please enter title")
+
+        if (title === null || title === '') {
+            result = false;
+            toast.warning("Please enter title")
         }
-        if(description === null || description === ''){
-          result = false;
-          toast.warning("Please enter description")
+        if (description === null || description === '') {
+            result = false;
+            toast.warning("Please enter description")
         }
-        if(author === null || author === ''){
+        if (author === null || author === '') {
             result = false;
             toast.warning("Please enter author")
         }
-        if(category === null || category === ''){
+        if (category === null || category === '') {
             result = false;
             toast.warning("Please enter category")
         }
         return result
-      }
+    }
 
     const addBlogHandler = (e) => {
         e.preventDefault()
+        
+        if (validate()) {
+            let data = { title, description, author, category }
 
-        if(validate()){
-            let data = {title, description, author, category}
-            console.log("data",data);
-
-            fetch(' http://localhost:5000/blogs',{
-                method:"POST",
-                headers:{"content-type":"application/json"},
-                body:JSON.stringify(data)
-            }).then((response)=>response.json()).then((data)=>{
+            fetch(' http://localhost:5000/blogs', {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(data)
+            }).then((response) => response.json()).then((data) => {
                 console.log("dsgukj", data)
                 toast.success("Blog Added Successfully")
             }).catch(err => {
-                toast.error("Login failed due to : "+ err.message)
-              })
+                toast.error("Login failed due to : " + err.message)
+            })
 
+            window.location.reload()
             setOpen(false);
         }
 
@@ -61,7 +66,7 @@ export default function BasicModal() {
 
     return (
         <div>
-            <Button onClick={handleOpen} style={{ textDecoration: "none", background: "blue", color: "white", fontWeight: "bolder", margin:"0 0 2vh 56vw" }}>Add Blog</Button>
+            <Button onClick={handleOpen} style={{ textDecoration: "none", background: "blue", color: "white", fontWeight: "bolder", margin: "0 0 2vh 56vw" }}>Add Blog</Button>
             <Modal
                 open={open}
                 aria-labelledby="modal-modal-title"
@@ -72,14 +77,14 @@ export default function BasicModal() {
                         <div className="offset-lg-3 col-lg-6" style={{ marginTop: '150px' }}>
                             <form className="container" onSubmit={addBlogHandler} >
                                 <div className="card">
-                                    <div className="card-header">
-                                        <h2>ADD BLOG</h2>
+                                    <div className="card-header" style={{ display: "flex" }}>
+                                        <h2>ADD BLOG</h2><CloseIcon style={{ margin: "1vh 0 0 30vw", cursor: "pointer" }} onClick={closeModalHandler} />
                                     </div>
 
                                     <div className="card-body">
                                         <div className="form-group">
                                             <label htmlFor="title">Title <span className='errmsg'>*</span></label>
-                                            <input type="text" className='form-control' value={title} onChange={(e => setTitle(e.target.value))}/>
+                                            <input type="text" className='form-control' value={title} onChange={(e => setTitle(e.target.value))} />
                                         </div>
 
                                         <div className="form-group">
@@ -89,12 +94,12 @@ export default function BasicModal() {
 
                                         <div className="form-group">
                                             <label htmlFor="author">Author <span className='errmsg'>*</span></label>
-                                            <input type="text" className='form-control' value={author} onChange={(e => setAuthor(e.target.value))}/>
+                                            <input type="text" className='form-control' value={author} onChange={(e => setAuthor(e.target.value))} />
                                         </div>
 
                                         <div className="form-group">
                                             <label htmlFor="category">Category <span className='errmsg'>*</span></label>
-                                            <input type="text" className='form-control' value={category} onChange={(e => setCategory(e.target.value))}/>
+                                            <input type="text" className='form-control' value={category} onChange={(e => setCategory(e.target.value))} />
                                         </div>
 
                                     </div>
